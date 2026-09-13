@@ -1,490 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AJ ESPORTS OFFICIAL</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJ ESPORTS OFFICIAL</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      background: #080b16;
-      color: #fff;
-      min-height: 100vh;
-    }
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  background:
+    linear-gradient(rgba(0,0,0,.82), rgba(20,0,0,.9)),
+    radial-gradient(circle at top, #8b0000, #050505 65%);
+  min-height: 100vh;
+}
 
-    header {
-      text-align: center;
-      padding: 25px 15px;
-      background: linear-gradient(135deg, #171936, #29103f);
-      border-bottom: 2px solid #874cff;
-    }
+.container {
+  width: 92%;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px 0 40px;
+}
 
-    header h1 {
-      color: #c39bff;
-      font-size: 30px;
-    }
+/* OFFICIAL LOGO */
+.official-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 10px auto 25px;
+}
 
-    header p {
-      color: #ddd;
-      margin-top: 8px;
-    }
+.logo-shield {
+  width: 78px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #ff3030, #720000);
+  color: white;
+  font-size: 31px;
+  font-weight: 1000;
+  font-style: italic;
+  border: 3px solid white;
+  clip-path: polygon(
+    50% 0%, 92% 18%, 86% 72%,
+    50% 100%, 14% 72%, 8% 18%
+  );
+  box-shadow: 0 0 22px red;
+}
 
-    .hero {
-      text-align: center;
-      padding: 38px 15px;
-    }
+.logo-text h1 {
+  color: white;
+  font-size: 28px;
+  font-weight: 1000;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px red;
+}
 
-    .hero h2 {
-      font-size: 31px;
-      margin-bottom: 12px;
-    }
+.logo-text span {
+  display: block;
+  color: #ff2424;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  margin-top: 5px;
+}
 
-    .hero span {
-      color: #a46cff;
-    }
+.hero {
+  text-align: center;
+  padding: 22px 10px;
+}
 
-    .hero p {
-      color: #c9c9d3;
-      line-height: 1.7;
-    }
+.hero h2 {
+  color: #ff2525;
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 12px red;
+}
 
-    .container {
-      width: 94%;
-      max-width: 950px;
-      margin: auto;
-    }
+.hero p {
+  color: #ddd;
+  font-size: 15px;
+}
 
-    .title {
-      text-align: center;
-      color: #c9aaff;
-      font-size: 25px;
-      margin: 25px 0 18px;
-    }
+.card {
+  background: rgba(15,15,15,.94);
+  border: 1px solid #7b1111;
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 18px rgba(255,0,0,.18);
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 14px;
-    }
+.section-title {
+  text-align: center;
+  color: #ff2929;
+  font-size: 23px;
+  margin-bottom: 18px;
+  text-shadow: 0 0 8px red;
+}
 
-    .card,
-    .payment,
-    form,
-    .rules {
-      background: #12182b;
-      border: 1px solid #493b78;
-      border-radius: 15px;
-      padding: 20px;
-    }
+.mode {
+  border: 1px solid #641313;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 12px 0;
+  background: linear-gradient(135deg, #210606, #090909);
+}
 
-    .card {
-      text-align: center;
-    }
+.mode h3 {
+  color: #ff3b3b;
+  margin-bottom: 8px;
+}
 
-    .card h3 {
-      color: #b38aff;
-      margin-bottom: 9px;
-    }
+.mode p {
+  color: #ddd;
+  line-height: 1.7;
+}
 
-    .card p {
-      color: #ddd;
-      line-height: 1.7;
-      font-size: 14px;
-    }
+.price {
+  color: #ffd700;
+  font-weight: bold;
+}
 
-    .payment {
-      margin-top: 25px;
-      background: linear-gradient(135deg, #18142e, #101c31);
-    }
+.room-box {
+  border: 1px dashed #ff3333;
+  background: #180303;
+  border-radius: 12px;
+  padding: 16px;
+  line-height: 1.9;
+  text-align: center;
+}
 
-    .payment h3 {
-      text-align: center;
-      color: #d0b8ff;
-      font-size: 23px;
-      margin-bottom: 17px;
-    }
+.room-box b {
+  color: #ffd700;
+}
 
-    .fee {
-      background: #080b16;
-      border-radius: 10px;
-      text-align: center;
-      padding: 14px;
-      color: #ddd;
-    }
+.notice {
+  color: #ffb3b3;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 13px;
+}
 
-    .fee strong {
-      display: block;
-      color: #b38aff;
-      font-size: 24px;
-      margin-top: 5px;
-    }
+.btn {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(90deg, #e00000, #800000);
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 12px;
+  border: 1px solid #ff4444;
+}
 
-    .upi {
-      background: #080b16;
-      text-align: center;
-      padding: 15px;
-      border-radius: 10px;
-      margin-top: 17px;
-      word-break: break-word;
-    }
+.btn:hover {
+  background: linear-gradient(90deg, #ff3333, #a00000);
+}
 
-    button,
-    .whatsapp {
-      width: 100%;
-      display: block;
-      padding: 14px;
-      margin-top: 12px;
-      border: none;
-      border-radius: 10px;
-      text-align: center;
-      font-size: 16px;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-    }
+footer {
+  text-align: center;
+  color: #aaa;
+  font-size: 13px;
+  margin-top: 28px;
+}
 
-    .pay {
-      background: #7440ff;
-      color: white;
-    }
+@media (max-width: 480px) {
+  .logo-shield {
+    width: 60px;
+    height: 70px;
+    font-size: 25px;
+  }
 
-    .whatsapp {
-      background: #16b957;
-      color: white;
-    }
+  .logo-text h1 {
+    font-size: 21px;
+  }
 
-    label {
-      display: block;
-      margin: 14px 0 6px;
-      color: #ddd;
-      font-size: 14px;
-    }
+  .logo-text span {
+    font-size: 13px;
+    letter-spacing: 3px;
+  }
 
-    input,
-    select {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #51457c;
-      border-radius: 8px;
-      background: #080b16;
-      color: white;
-      outline: none;
-    }
+  .hero h2 {
+    font-size: 23px;
+  }
 
-    .players {
-      display: none;
-    }
-
-    .submit {
-      background: #ff8b22;
-      color: white;
-      margin-top: 20px;
-    }
-
-    .notice {
-      display: none;
-      background: #20283c;
-      color: #dfd2ff;
-      padding: 13px;
-      border-radius: 8px;
-      margin-top: 14px;
-      line-height: 1.6;
-    }
-
-    .rules p,
-    .prize p {
-      color: #ddd;
-      line-height: 1.8;
-      margin: 5px 0;
-    }
-
-    .prize {
-      margin-top: 25px;
-    }
-
-    footer {
-      text-align: center;
-      color: #aaa;
-      padding: 30px 15px;
-      font-size: 13px;
-    }
-  </style>
+  .section-title {
+    font-size: 19px;
+  }
+}
+</style>
 </head>
 
 <body>
+<div class="container">
 
-<header>
-  <h1>⚡ AJ ESPORTS OFFICIAL</h1>
-  <p>Free Fire MAX Tournament Platform</p>
-</header>
+  <!-- AJ ESPORTS OFFICIAL LOGO -->
+  <div class="official-logo">
+    <div class="logo-shield">AJ</div>
 
-<section class="hero">
-  <h2>BATTLE. <span>WIN.</span> DOMINATE.</h2>
-  <p>
-    Solo, Duo, Squad aur Custom matches ke liye registration karein.
-  </p>
-</section>
-
-<main class="container">
-
-  <h2 class="title">🎮 Tournament Modes</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>SOLO</h3>
-      <p>48 Players</p>
-      <p>Entry: ₹20</p>
-    </div>
-
-    <div class="card">
-      <h3>DUO / 2v2</h3>
-      <p>24 Teams</p>
-      <p>48 Players</p>
-      <p>Entry: ₹50 per team</p>
-    </div>
-
-    <div class="card">
-      <h3>SQUAD / 4v4</h3>
-      <p>12 Squads</p>
-      <p>48 Players</p>
-      <p>Entry: ₹100 per squad</p>
-    </div>
-
-    <div class="card">
-      <h3>CUSTOM</h3>
-      <p>1v1 • 2v2 • 4v4</p>
-      <p>Custom Match</p>
+    <div class="logo-text">
+      <h1>AJ ESPORTS</h1>
+      <span>OFFICIAL</span>
     </div>
   </div>
 
-  <section class="payment">
-    <h3>💳 Pay Entry Fee</h3>
+  <!-- HERO -->
+  <div class="hero">
+    <h2>🔥 FREE FIRE MAX TOURNAMENT 🔥</h2>
+    <p>Play Hard • Win Big • Become Champion</p>
+  </div>
 
-    <div class="grid">
-      <div class="fee">
-        Solo
-        <strong>₹20</strong>
-      </div>
+  <!-- PRIZE POOL -->
+  <section class="card">
+    <h2 class="section-title">
+      🏆 MEGA PRIZE POOL & WINNERS REWARDS 🏆
+    </h2>
 
-      <div class="fee">
-        Duo / 2v2
-        <strong>₹50</strong>
-      </div>
-
-      <div class="fee">
-        Squad / 4v4
-        <strong>₹100</strong>
-      </div>
+    <div class="mode">
+      <h3>🎯 SOLO TOURNAMENT</h3>
+      <p>👥 Players: 48</p>
+      <p>💰 Entry Fee: <span class="price">₹20</span></p>
+      <p>🏆 Winner Prize: <span class="price">₹600</span></p>
+      <p>🔥 Highest Kills Bonus: <span class="price">₹100</span></p>
     </div>
 
-    <div class="upi">
-      UPI ID:<br>
-      <b>ajesportsofficial@ibl</b>
+    <div class="mode">
+      <h3>⚡ DUO TOURNAMENT</h3>
+      <p>👥 Total Players: 48</p>
+      <p>👥 Teams: 24</p>
+      <p>💰 Entry Fee: <span class="price">₹50 per team</span></p>
+      <p>🏆 Winner Prize: <span class="price">₹800</span></p>
+      <p>🔥 Highest Kills Bonus: <span class="price">₹100</span></p>
     </div>
 
-    <button class="pay" onclick="payNow()">
-      📲 Pay Selected Entry Fee
-    </button>
+    <div class="mode">
+      <h3>💀 SQUAD TOURNAMENT</h3>
+      <p>👥 Total Players: 48</p>
+      <p>👥 Squads: 12</p>
+      <p>💰 Entry Fee: <span class="price">₹100 per squad</span></p>
+      <p>🏆 Winner Prize: <span class="price">₹800</span></p>
+      <p>🔥 Highest Kills Bonus: <span class="price">₹100</span></p>
+    </div>
+  </section>
 
-    <a
-  class="whatsapp"
-  href="https://chat.whatsapp.com/HedbpNfixHE0lWtv5FiMA0"
-  target="_blank"
-  rel="noopener">
-  Join WhatsApp Group
+  <!-- ROOM ID PASSWORD -->
+  <section class="card">
+    <h2 class="section-title">🔐 ROOM ID & PASSWORD 🔐</h2>
+
+    <div class="room-box">
+      <p>🆔 <b>Room ID:</b> Match start se pehle milega</p>
+      <p>🔑 <b>Password:</b> Match start se pehle milega</p>
+    </div>
+
+    <p class="notice">
+      ⚠️ Room ID aur Password match start hone se 5–10 minute pehle update kiya jayega.
+      Sirf registered players ke liye.
+    </p>
+  </section>
+
+  <!-- PAYMENT -->
+  <section class="card">
+    <h2 class="section-title">💳 ENTRY FEE PAYMENT</h2>
+
+    <p style="text-align:center; line-height:1.8;">
+      UPI ID: <b style="color:#ffd700;">ajesportsofficial@ibl</b>
+    </p>
+
+    <a class="btn" href="upi://pay?pa=ajesportsofficial@ibl&pn=AJ%20ESPORTS%20OFFICIAL">
+      💰 PAY ENTRY FEE
     </a>
 
-    >
-      💬 WhatsApp Contact
+    <a class="btn" href="https://wa.me/919670244453" target="_blank">
+      📲 WHATSAPP FOR REGISTRATION
     </a>
   </section>
 
-  <section class="prize">
-    <h2 class="title">🏆 Winner Prizes</h2>
+  <!-- WHATSAPP GROUP -->
+  <section class="card">
+    <h2 class="section-title">📢 JOIN WHATSAPP UPDATES</h2>
 
-    <div class="card">
-      <p>🥇 Solo Winner: ₹600</p>
-      <p>🥇 Duo Winner: ₹800</p>
-      <p>🥇 Squad Winner: ₹800</p>
-  
-    </div>
+    <a class="btn"
+       href="https://chat.whatsapp.com/HedbpNfixHE0lWtv5FiMA0"
+       target="_blank">
+      🚀 JOIN OFFICIAL WHATSAPP GROUP
+    </a>
   </section>
 
-  <h2 class="title">📝 Registration</h2>
+  <!-- RULES -->
+  <section class="card">
+    <h2 class="section-title">📜 TOURNAMENT RULES</h2>
 
-  <form id="registrationForm">
-
-    <label for="mode">Select Match Mode</label>
-    <select id="mode" required>
-      <option value="">Choose Mode</option>
-      <option value="Solo">Solo - ₹20</option>
-      <option value="Duo / 2v2">Duo / 2v2 - ₹50</option>
-      <option value="Squad / 4v4">Squad / 4v4 - ₹100</option>
-      <option value="Custom 1v1">Custom 1v1</option>
-      <option value="Custom 2v2">Custom 2v2</option>
-      <option value="Custom 4v4">Custom 4v4</option>
-    </select>
-
-    <label for="teamName">Team Name</label>
-    <input id="teamName" type="text" placeholder="Team name" required>
-
-    <label for="captainName">Captain Name</label>
-    <input id="captainName" type="text" placeholder="Captain name" required>
-
-    <label for="captainUid">Captain Free Fire UID</label>
-    <input id="captainUid" type="text" placeholder="Captain UID" required>
-
-    <div id="player2Box" class="players">
-      <label for="player2">Player 2 Name + UID</label>
-      <input id="player2" type="text" placeholder="Player 2 details">
-    </div>
-
-    <div id="player3Box" class="players">
-      <label for="player3">Player 3 Name + UID</label>
-      <input id="player3" type="text" placeholder="Player 3 details">
-    </div>
-
-    <div id="player4Box" class="players">
-      <label for="player4">Player 4 Name + UID</label>
-      <input id="player4" type="text" placeholder="Player 4 details">
-    </div>
-
-    <label for="utr">Payment UTR / Transaction ID</label>
-    <input id="utr" type="text" placeholder="Payment ke baad UTR" required>
-
-    <button class="submit" type="submit">
-      🚀 Submit Registration on WhatsApp
-    </button>
-
-    <div class="notice" id="notice"></div>
-
-  </form>
-
-  <h2 class="title">📜 Rules</h2>
-
-  <section class="rules">
-    <p>1. Players ko match time se pehle ready rehna hoga.</p>
-    <p>2. Wrong UID ya wrong details par registration reject ho sakta hai.</p>
-    <p>3. Hacking, cheating aur abusive behaviour allowed nahi hai.</p>
-    <p>4. Prize aur slot confirmation admin ke final verification ke baad hoga.</p>
-    <p>5. Custom match ki fee WhatsApp par confirm karein.</p>
+    <p style="line-height:2; color:#ddd;">
+      1. Only registered players can join the match.<br>
+      2. Room ID and Password private rakhein.<br>
+      3. Hack, bug, teaming aur abusive behaviour allowed nahi hai.<br>
+      4. Match timing ka strictly follow karein.<br>
+      5. Payment verification admin ke through hogi.<br>
+      6. Prize result ke baad rules ke according diya jayega.
+    </p>
   </section>
 
-</main>
+  <footer>
+    © 2026 AJ ESPORTS OFFICIAL — All Rights Reserved
+  </footer>
 
-<footer>
-  © 2026 AJ ESPORTS OFFICIAL | Fair Play • Teamwork • Victory
-</footer>
-
-<script>
-  const mode = document.getElementById("mode");
-
-  const player2Box = document.getElementById("player2Box");
-  const player3Box = document.getElementById("player3Box");
-  const player4Box = document.getElementById("player4Box");
-
-  mode.addEventListener("change", function () {
-    const selected = mode.value;
-
-    player2Box.style.display = "none";
-    player3Box.style.display = "none";
-    player4Box.style.display = "none";
-
-    if (
-      selected === "Duo / 2v2" ||
-      selected === "Custom 2v2" ||
-      selected === "Squad / 4v4" ||
-      selected === "Custom 4v4"
-    ) {
-      player2Box.style.display = "block";
-    }
-
-    if (
-      selected === "Squad / 4v4" ||
-      selected === "Custom 4v4"
-    ) {
-      player3Box.style.display = "block";
-      player4Box.style.display = "block";
-    }
-  });
-
-  function getFee() {
-    if (mode.value === "Solo") return "20";
-    if (mode.value === "Duo / 2v2") return "50";
-    if (mode.value === "Squad / 4v4") return "100";
-
-    return "0";
-  }
-
-  function payNow() {
-    if (!mode.value) {
-      alert("Pehle registration form mein match mode select karo.");
-      return;
-    }
-
-    const fee = getFee();
-
-    if (fee === "0") {
-      alert("Custom match ki fee WhatsApp par confirm karo.");
-      return;
-    }
-
-    const upiLink =
-      "upi://pay?pa=" +
-      encodeURIComponent("ajesportsofficial@ibl") +
-      "&pn=" +
-      encodeURIComponent("AJ ESPORTS OFFICIAL") +
-      "&am=" +
-      fee +
-      "&cu=INR";
-
-    window.location.href = upiLink;
-  }
-
-  document
-    .getElementById("registrationForm")
-    .addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const selected = mode.value;
-      const teamName = document.getElementById("teamName").value;
-      const captainName = document.getElementById("captainName").value;
-      const captainUid = document.getElementById("captainUid").value;
-      const player2 = document.getElementById("player2").value;
-      const player3 = document.getElementById("player3").value;
-      const player4 = document.getElementById("player4").value;
-      const utr = document.getElementById("utr").value;
-
-      const message =
-        "AJ ESPORTS OFFICIAL REGISTRATION\n\n" +
-        "Mode: " + selected + "\n" +
-        "Entry Fee: ₹" + getFee() + "\n" +
-        "Team Name: " + teamName + "\n" +
-        "Captain: " + captainName + "\n" +
-        "Captain UID: " + captainUid + "\n" +
-        "Player 2: " + player2 + "\n" +
-        "Player 3: " + player3 + "\n" +
-        "Player 4: " + player4 + "\n" +
-        "UTR: " + utr;
-
-      const whatsappUrl =
-        "https://wa.me/919670244453?text=" +
-        encodeURIComponent(message);
-
-      document.getElementById("notice").style.display = "block";
-      document.getElementById("notice").textContent =
-        "Registration details WhatsApp par bheji ja rahi hain.";
-
-      window.open(whatsappUrl, "_blank");
-    });
-</script>
-
+</div>
 </body>
 </html>
