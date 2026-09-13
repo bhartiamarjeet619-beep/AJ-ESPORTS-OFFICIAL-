@@ -3,318 +3,851 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AJ ESPORTS OFFICIAL</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  color: white;
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#080b18;
+  color:white;
+}
+
+header{
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#10152b;
+  border-bottom:1px solid #292e50;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:bold;
+  color:#a78bfa;
+}
+
+nav a{
+  color:#ddd;
+  text-decoration:none;
+  margin-left:15px;
+  font-size:13px;
+}
+
+.hero{
+  padding:65px 6%;
+  text-align:center;
   background:
-    linear-gradient(rgba(0,0,0,.82), rgba(20,0,0,.9)),
-    radial-gradient(circle at top, #8b0000, #050505 65%);
-  min-height: 100vh;
+  radial-gradient(circle at top,#4c1d95 0,#111936 40%,#080b18 100%);
 }
 
-.container {
-  width: 92%;
-  max-width: 900px;
-  margin: auto;
-  padding: 20px 0 40px;
+.tag{
+  color:#c4b5fd;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:2px;
 }
 
-/* OFFICIAL LOGO */
-.official-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin: 10px auto 25px;
+h1{
+  font-size:clamp(30px,8vw,58px);
+  margin:15px 0;
 }
 
-.logo-shield {
-  width: 78px;
-  height: 88px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(145deg, #ff3030, #720000);
-  color: white;
-  font-size: 31px;
-  font-weight: 1000;
-  font-style: italic;
-  border: 3px solid white;
-  clip-path: polygon(
-    50% 0%, 92% 18%, 86% 72%,
-    50% 100%, 14% 72%, 8% 18%
-  );
-  box-shadow: 0 0 22px red;
+.hero p{
+  color:#c4c9df;
+  line-height:1.7;
 }
 
-.logo-text h1 {
-  color: white;
-  font-size: 28px;
-  font-weight: 1000;
-  letter-spacing: 1px;
-  text-shadow: 0 0 12px red;
+.btn{
+  display:inline-block;
+  margin-top:22px;
+  padding:13px 20px;
+  background:#7c3aed;
+  color:white;
+  text-decoration:none;
+  border:0;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.logo-text span {
-  display: block;
-  color: #ff2424;
-  font-size: 17px;
-  font-weight: 900;
-  letter-spacing: 5px;
-  margin-top: 5px;
+.btn:hover{
+  background:#8b5cf6;
 }
 
-.hero {
-  text-align: center;
-  padding: 22px 10px;
+section{
+  padding:35px 6%;
+  max-width:1100px;
+  margin:auto;
 }
 
-.hero h2 {
-  color: #ff2525;
-  font-size: 28px;
-  margin-bottom: 10px;
-  text-shadow: 0 0 12px red;
+h2{
+  text-align:center;
+  margin-bottom:22px;
 }
 
-.hero p {
-  color: #ddd;
-  font-size: 15px;
+.modes{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
 }
 
-.card {
-  background: rgba(15,15,15,.94);
-  border: 1px solid #7b1111;
-  border-radius: 16px;
-  padding: 20px;
-  margin-top: 20px;
-  box-shadow: 0 0 18px rgba(255,0,0,.18);
+.mode{
+  background:#12172b;
+  border:1px solid #29304e;
+  border-radius:12px;
+  padding:20px;
+  text-align:center;
+  cursor:pointer;
+  transition:.2s;
 }
 
-.section-title {
-  text-align: center;
-  color: #ff2929;
-  font-size: 23px;
-  margin-bottom: 18px;
-  text-shadow: 0 0 8px red;
+.mode:hover{
+  transform:translateY(-3px);
+  border-color:#7c3aed;
 }
 
-.mode {
-  border: 1px solid #641313;
-  border-radius: 12px;
-  padding: 15px;
-  margin: 12px 0;
-  background: linear-gradient(135deg, #210606, #090909);
+.mode.active{
+  border:2px solid #8b5cf6;
+  background:#191638;
 }
 
-.mode h3 {
-  color: #ff3b3b;
-  margin-bottom: 8px;
+.mode h3{
+  margin:10px 0;
 }
 
-.mode p {
-  color: #ddd;
-  line-height: 1.7;
+.mode p{
+  color:#aab1ce;
+  font-size:13px;
 }
 
-.price {
-  color: #ffd700;
-  font-weight: bold;
+.matches{
+  display:grid;
+  gap:12px;
 }
 
-.room-box {
-  border: 1px dashed #ff3333;
-  background: #180303;
-  border-radius: 12px;
-  padding: 16px;
-  line-height: 1.9;
-  text-align: center;
+.match{
+  background:#12172b;
+  border:1px solid #29304e;
+  border-radius:12px;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
 }
 
-.room-box b {
-  color: #ffd700;
+.match h3{
+  margin-bottom:8px;
 }
 
-.notice {
-  color: #ffb3b3;
-  text-align: center;
-  margin-top: 10px;
-  font-size: 13px;
+.match p{
+  color:#aab1ce;
+  font-size:13px;
 }
 
-.btn {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  background: linear-gradient(90deg, #e00000, #800000);
-  padding: 14px;
-  border-radius: 10px;
-  font-weight: bold;
-  margin-top: 12px;
-  border: 1px solid #ff4444;
+.price{
+  font-size:20px;
+  font-weight:bold;
+  color:#a78bfa;
 }
 
-.btn:hover {
-  background: linear-gradient(90deg, #ff3333, #a00000);
+.formbox{
+  max-width:500px;
+  margin:auto;
+  background:#12172b;
+  border:1px solid #29304e;
+  border-radius:12px;
+  padding:20px;
 }
 
-footer {
-  text-align: center;
-  color: #aaa;
-  font-size: 13px;
-  margin-top: 28px;
+label{
+  display:block;
+  margin:14px 0 6px;
+  color:#cbd5e1;
+  font-size:14px;
 }
 
-@media (max-width: 480px) {
-  .logo-shield {
-    width: 60px;
-    height: 70px;
-    font-size: 25px;
+input,
+select{
+  width:100%;
+  padding:13px;
+  border-radius:7px;
+  border:1px solid #343b5b;
+  background:#080b18;
+  color:white;
+  outline:none;
+}
+
+input:focus,
+select:focus{
+  border-color:#7c3aed;
+}
+
+.payment-box{
+  margin-top:20px;
+  padding:18px;
+  background:#0b1022;
+  border:1px solid #343b5b;
+  border-radius:10px;
+  text-align:center;
+}
+
+.payment-box h3{
+  margin-bottom:10px;
+}
+
+.upi{
+  color:#a78bfa;
+  font-weight:bold;
+  font-size:16px;
+  word-break:break-all;
+}
+
+.amount{
+  font-size:30px;
+  font-weight:bold;
+  margin:12px 0;
+  color:#fff;
+}
+
+.small{
+  color:#929ab9;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.pay-btn{
+  width:100%;
+  margin-top:15px;
+}
+
+.submit-btn{
+  width:100%;
+  margin-top:20px;
+}
+
+.result{
+  margin-top:15px;
+  color:#a78bfa;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.room-box{
+  max-width:500px;
+  margin:auto;
+  text-align:center;
+  background:#12172b;
+  border:1px solid #29304e;
+  border-radius:12px;
+  padding:25px;
+}
+
+.room-info{
+  margin-top:18px;
+  padding:15px;
+  background:#080b18;
+  border-radius:8px;
+}
+
+.room-info p{
+  margin:8px 0;
+  color:#cbd5e1;
+}
+
+.room-value{
+  color:#a78bfa;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#929ab9;
+  background:#10152b;
+  font-size:13px;
+}
+
+@media(max-width:600px){
+
+  header{
+    padding:15px 5%;
   }
 
-  .logo-text h1 {
-    font-size: 21px;
+  .logo{
+    font-size:16px;
   }
 
-  .logo-text span {
-    font-size: 13px;
-    letter-spacing: 3px;
+  nav a{
+    margin-left:8px;
+    font-size:11px;
   }
 
-  .hero h2 {
-    font-size: 23px;
+  .modes{
+    gap:7px;
   }
 
-  .section-title {
-    font-size: 19px;
+  .mode{
+    padding:14px 5px;
+  }
+
+  .mode h3{
+    font-size:14px;
+  }
+
+  .mode p{
+    font-size:11px;
+  }
+
+  .match{
+    padding:14px;
+  }
+
+  .match .btn{
+    padding:10px;
+    font-size:12px;
+  }
+
+  .match h3{
+    font-size:15px;
+  }
+
+  .match p{
+    font-size:11px;
   }
 }
 </style>
 </head>
 
 <body>
-<div class="container">
 
-  <!-- AJ ESPORTS OFFICIAL LOGO -->
-  <div class="official-logo">
-    <div class="logo-shield">AJ</div>
+<header>
 
-    <div class="logo-text">
-      <h1>AJ ESPORTS</h1>
-      <span>OFFICIAL</span>
-    </div>
-  </div>
+<div class="logo">⚡ AJ ESPORTS</div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h2>🔥 FREE FIRE MAX TOURNAMENT 🔥</h2>
-    <p>Play Hard • Win Big • Become Champion</p>
-  </div>
+<nav>
+<a href="#matches">Matches</a>
+<a href="#register">Register</a>
+<a href="#room">Room</a>
+</nav>
 
-  <!-- PRIZE POOL -->
-  <section class="card">
-    <h2 class="section-title">
-      🏆 MEGA PRIZE POOL & WINNERS REWARDS 🏆
-    </h2>
+</header>
 
-    <div class="mode">
-      <h3>🎯 SOLO TOURNAMENT</h3>
-      <p>👥 Players: 48</p>
-      <p>💰 Entry Fee: <span class="price">₹20</span></p>
-      <p>🏆 Winner Prize: <span class="price">₹600</span></p>
-      <p>🔥 Highest Kills Bonus: <span class="price">₹100</span></p>
-    </div>
 
-    <div class="mode">
-      <h3>⚡ DUO TOURNAMENT</h3>
-      <p>👥 Total Players: 48</p>
-      <p>👥 Teams: 24</p>
-      <p>💰 Entry Fee: <span class="price">₹50 per team</span></p>
-      <p>🏆 Winner Prize: <span class="price">₹800</span></p>
-      <p>🔥 Highest Kills Bonus: <span class="price">₹100</span></p>
-    </div>
+<!-- HERO -->
 
-    <div class="mode">
-      <h3>💀 SQUAD TOURNAMENT</h3>
-      <p>👥 Total Players: 48</p>
-      <p>👥 Squads: 12</p>
-      <p>💰 Entry Fee: <span class="price">₹100 per squad</span></p>
-      <p>🏆 Winner Prize: <span class="price">₹800</span></p>
-      <p>🔥 Highest Kills Bonus: <span class="price">₹100</span></p>
-    </div>
-  </section>
+<div class="hero">
 
-  <!-- ROOM ID PASSWORD -->
-  <section class="card">
-    <h2 class="section-title">🔐 ROOM ID & PASSWORD 🔐</h2>
+<div class="tag">AJ ESPORTS OFFICIAL</div>
 
-    <div class="room-box">
-      <p>🆔 <b>Room ID:</b> Match start se pehle milega</p>
-      <p>🔑 <b>Password:</b> Match start se pehle milega</p>
-    </div>
+<h1>
+BATTLE. WIN.<br>
+DOMINATE.
+</h1>
 
-    <p class="notice">
-      ⚠️ Room ID aur Password match start hone se 5–10 minute pehle update kiya jayega.
-      Sirf registered players ke liye.
-    </p>
-  </section>
+<p>
+Free Fire MAX Tournament Hub<br>
+Join the battle and show your skills!
+</p>
 
-  <!-- PAYMENT -->
-  <section class="card">
-    <h2 class="section-title">💳 ENTRY FEE PAYMENT</h2>
-
-    <p style="text-align:center; line-height:1.8;">
-      UPI ID: <b style="color:#ffd700;">ajesportsofficial@ibl</b>
-    </p>
-
-    <a class="btn" href="upi://pay?pa=ajesportsofficial@ibl&pn=AJ%20ESPORTS%20OFFICIAL">
-      💰 PAY ENTRY FEE
-    </a>
-
-    <a class="btn" href="https://wa.me/919670244453" target="_blank">
-      📲 WHATSAPP FOR REGISTRATION
-    </a>
-  </section>
-
-  <!-- WHATSAPP GROUP -->
-  <section class="card">
-    <h2 class="section-title">📢 JOIN WHATSAPP UPDATES</h2>
-
-    <a class="btn"
-       href="https://chat.whatsapp.com/HedbpNfixHE0lWtv5FiMA0"
-       target="_blank">
-      🚀 JOIN OFFICIAL WHATSAPP GROUP
-    </a>
-  </section>
-
-  <!-- RULES -->
-  <section class="card">
-    <h2 class="section-title">📜 TOURNAMENT RULES</h2>
-
-    <p style="line-height:2; color:#ddd;">
-      1. Only registered players can join the match.<br>
-      2. Room ID and Password private rakhein.<br>
-      3. Hack, bug, teaming aur abusive behaviour allowed nahi hai.<br>
-      4. Match timing ka strictly follow karein.<br>
-      5. Payment verification admin ke through hogi.<br>
-      6. Prize result ke baad rules ke according diya jayega.
-    </p>
-  </section>
-
-  <footer>
-    © 2026 AJ ESPORTS OFFICIAL — All Rights Reserved
-  </footer>
+<a href="#matches" class="btn">
+JOIN TOURNAMENT →
+</a>
 
 </div>
+
+
+<!-- MODES -->
+
+<section>
+
+<h2>Choose Your Battle</h2>
+
+<div class="modes">
+
+<div class="mode active" onclick="selectMode('Solo',50,this)">
+<div style="font-size:35px">👤</div>
+<h3>SOLO</h3>
+<p>1 Player • ₹50</p>
+</div>
+
+<div class="mode" onclick="selectMode('Duo',100,this)">
+<div style="font-size:35px">👥</div>
+<h3>DUO</h3>
+<p>2 Players • ₹100</p>
+</div>
+
+<div class="mode" onclick="selectMode('Squad',150,this)">
+<div style="font-size:35px">⚔️</div>
+<h3>SQUAD</h3>
+<p>4 Players • ₹150</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MATCHES -->
+
+<section id="matches">
+
+<h2>Upcoming Matches</h2>
+
+<div class="matches">
+
+<div class="match">
+
+<div>
+<h3>🔥 Bermuda Battle</h3>
+<p>Free Fire MAX • Squad • 07:00 PM</p>
+</div>
+
+<div style="text-align:right">
+
+<div class="price">₹150</div>
+
+<p>Per Squad</p>
+
+<a href="#register" class="btn"
+onclick="selectMode('Squad',150,null)">
+Register
+</a>
+
+</div>
+
+</div>
+
+
+<div class="match">
+
+<div>
+<h3>⚡ Solo Clash</h3>
+<p>Free Fire MAX • Solo • Coming Soon</p>
+</div>
+
+<div style="text-align:right">
+
+<div class="price">₹50</div>
+
+<p>Entry Fee</p>
+
+<a href="#register" class="btn"
+onclick="selectMode('Solo',50,null)">
+Details
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REGISTER -->
+
+<section id="register">
+
+<h2>Register For Tournament</h2>
+
+<div class="formbox">
+
+<p style="color:#aab1ce;font-size:13px">
+Enter your details and complete the payment.
+</p>
+
+
+<form id="regForm">
+
+<label>Team / Player Name</label>
+
+<input
+id="team"
+required
+placeholder="Enter team or player name"
+>
+
+
+<label>Captain Name</label>
+
+<input
+id="captain"
+required
+placeholder="Enter captain name"
+>
+
+
+<label>Free Fire UID</label>
+
+<input
+id="uid"
+required
+placeholder="Enter Free Fire UID"
+>
+
+
+<label>Mobile Number</label>
+
+<input
+id="phone"
+type="tel"
+required
+placeholder="Enter mobile number"
+>
+
+
+<label>Match Mode</label>
+
+<select id="mode" onchange="updateFee()">
+
+<option value="Solo" data-fee="50">
+Solo - ₹50
+</option>
+
+<option value="Duo" data-fee="100">
+Duo - ₹100
+</option>
+
+<option value="Squad" data-fee="150">
+Squad - ₹150
+</option>
+
+</select>
+
+
+<!-- PAYMENT -->
+
+<div class="payment-box">
+
+<h3>💳 Tournament Payment</h3>
+
+<p class="small">
+Pay the exact entry fee using UPI.
+</p>
+
+<div class="upi">
+ajesportsofficial@ibl
+</div>
+
+<div class="amount">
+₹<span id="amount">50</span>
+</div>
+
+<a
+id="payButton"
+class="btn pay-btn"
+href="upi://pay?pa=ajesportsofficial@ibl&pn=AJ%20ESPORTS%20OFFICIAL&am=50&cu=INR"
+>
+💳 PAY NOW
+</a>
+
+<p class="small" style="margin-top:12px">
+After payment, enter your UTR / Transaction ID below.
+</p>
+
+</div>
+
+
+<label>UTR / Transaction ID</label>
+
+<input
+id="utr"
+required
+placeholder="Enter payment UTR / Transaction ID"
+>
+
+
+<button
+class="btn submit-btn"
+type="submit"
+>
+SUBMIT REGISTRATION →
+</button>
+
+</form>
+
+
+<div id="result" class="result"></div>
+
+</div>
+
+</section>
+
+
+<!-- ROOM DETAILS -->
+
+<section id="room">
+
+<h2>🎮 Room Details</h2>
+
+<div class="room-box">
+
+<p style="color:#aab1ce">
+After your payment is verified, room details
+will be provided by AJ ESPORTS OFFICIAL.
+</p>
+
+<div class="room-info">
+
+<p>
+Room ID:
+<span class="room-value">
+Waiting for verification
+</span>
+</p>
+
+<p>
+Password:
+<span class="room-value">
+Waiting for verification
+</span>
+</p>
+
+</div>
+
+<p class="small" style="margin-top:15px">
+⚠️ Do not share your room ID and password publicly.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section>
+
+<h2>Contact AJ ESPORTS</h2>
+
+<div class="formbox" style="text-align:center">
+
+<p style="color:#aab1ce">
+Tournament registration & updates
+</p>
+
+<p
+style="font-size:20px;font-weight:bold;margin-top:15px"
+>
+📱 9670244453
+</p>
+
+<a
+class="btn"
+href="https://wa.me/919670244453"
+target="_blank"
+>
+WhatsApp Us
+</a>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 AJ ESPORTS OFFICIAL<br>
+Free Fire MAX Tournament
+
+</footer>
+
+
+<script>
+
+/* DEFAULT VALUES */
+
+let selectedMode = "Solo";
+let selectedFee = 50;
+
+
+/* SELECT MODE */
+
+function selectMode(mode, fee, element){
+
+selectedMode = mode;
+selectedFee = fee;
+
+document.getElementById("mode").value = mode;
+
+document.getElementById("amount").textContent = fee;
+
+updatePaymentLink();
+
+if(element){
+
+document.querySelectorAll(".mode")
+.forEach(function(card){
+card.classList.remove("active");
+});
+
+element.classList.add("active");
+
+}
+
+}
+
+
+/* UPDATE FEE */
+
+function updateFee(){
+
+let select = document.getElementById("mode");
+
+let option =
+select.options[select.selectedIndex];
+
+selectedMode = option.value;
+
+selectedFee =
+parseInt(option.getAttribute("data-fee"));
+
+document.getElementById("amount")
+.textContent = selectedFee;
+
+updatePaymentLink();
+
+}
+
+
+/* UPDATE UPI PAYMENT LINK */
+
+function updatePaymentLink(){
+
+let paymentLink =
+"upi://pay" +
+"?pa=ajesportsofficial@ibl" +
+"&pn=AJ%20ESPORTS%20OFFICIAL" +
+"&am=" + selectedFee +
+"&cu=INR";
+
+document.getElementById("payButton")
+.href = paymentLink;
+
+}
+
+
+/* FORM SUBMIT */
+
+document
+.getElementById("regForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+
+let team =
+document.getElementById("team").value.trim();
+
+let captain =
+document.getElementById("captain").value.trim();
+
+let uid =
+document.getElementById("uid").value.trim();
+
+let phone =
+document.getElementById("phone").value.trim();
+
+let utr =
+document.getElementById("utr").value.trim();
+
+
+if(!team || !captain || !uid || !phone || !utr){
+
+document.getElementById("result").innerHTML =
+"❌ Please fill all details.";
+
+return;
+
+}
+
+
+/* WHATSAPP MESSAGE */
+
+let message =
+"🔥 AJ ESPORTS OFFICIAL REGISTRATION%0A%0A" +
+
+"Team/Player: " +
+encodeURIComponent(team) +
+
+"%0ACaptain: " +
+encodeURIComponent(captain) +
+
+"%0AFree Fire UID: " +
+encodeURIComponent(uid) +
+
+"%0AMobile: " +
+encodeURIComponent(phone) +
+
+"%0AMode: " +
+encodeURIComponent(selectedMode) +
+
+"%0AEntry Fee: ₹" +
+selectedFee +
+
+"%0AUTR: " +
+encodeURIComponent(utr) +
+
+"%0A%0APlease verify my tournament payment.";
+
+
+/* SHOW SUCCESS */
+
+document.getElementById("result").innerHTML =
+"✅ Registration details prepared!<br>" +
+"Click the WhatsApp button below to send them to AJ ESPORTS.";
+
+
+/* WHATSAPP BUTTON */
+
+let whatsappButton =
+document.createElement("a");
+
+whatsappButton.href =
+"https://wa.me/919670244453?text=" +
+message;
+
+whatsappButton.target="_blank";
+
+whatsappButton.className="btn";
+
+whatsappButton.style.marginTop="12px";
+
+whatsappButton.textContent =
+"📲 SEND REGISTRATION ON WHATSAPP";
+
+
+document.getElementById("result")
+.appendChild(document.createElement("br"));
+
+document.getElementById("result")
+.appendChild(whatsappButton);
+
+});
+
+
+/* INITIAL PAYMENT LINK */
+
+updatePaymentLink();
+
+</script>
+
 </body>
 </html>
